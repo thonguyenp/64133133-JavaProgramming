@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Bai2 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void GiaiPTBac2 ()
+	{
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Nhập vào hệ số a: ");
 		double a = sc.nextDouble();
@@ -36,6 +36,12 @@ public class Bai2 {
 			else 
 				System.out.printf("Phương trình có 2 nghiệm phân biệt: %.2f %.2f", (-b + Math.sqrt(delta))/((2*a)),(-b - Math.sqrt(delta))/((2*a)) );
 		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GiaiPTBac2();
+		
 	}
 
 }

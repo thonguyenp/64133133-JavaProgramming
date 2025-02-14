@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Bai1 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void GiaiPTBac1()
+	{
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Nhập vào số a :");
 		double a = sc.nextDouble();
@@ -23,6 +23,12 @@ public class Bai1 {
 		}
 		else
 			System.out.println("Nghiệm pt: " + (-b)/a);
+
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GiaiPTBac1();
 	}
 
 }

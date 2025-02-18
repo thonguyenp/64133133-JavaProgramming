@@ -1,6 +1,9 @@
 package BaiLab5;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Bai2 {
@@ -27,6 +30,30 @@ public class Bai2 {
 			System.out.println(name);
 	}
 	
+	private static void ngaunhien ()
+	{
+		ArrayList<String> randomList = new ArrayList<>(nameList);	//sao chep cac phan tu tu nameList vào randomList
+		Collections.shuffle(randomList, new Random());
+		System.out.println("Danh sách ngẫu nhiên");
+		for (String name : randomList)
+			System.out.println(name);
+
+	}
+	
+	private static void xoa()
+	{
+		System.out.print("Nhập vào họ tên cần xóa: ");
+		String delName = sc.nextLine();
+		if (nameList.remove(delName))
+		{
+			System.out.println("Đã xóa thành công");
+		}
+		else
+		{
+			System.out.println("Không tìm thấy tên nhập vào");
+		}
+	}
+	
 	public static void menu ()
 	{
 		int choice;
@@ -49,6 +76,12 @@ public class Bai2 {
             case 2:
                 xuat();
                 break;
+            case 3:
+                ngaunhien();
+                break;
+            case 5:
+            	xoa();
+            	break;
 
             case 6:
                 System.out.println("Chương trình kết thúc.");

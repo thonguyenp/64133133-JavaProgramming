@@ -44,6 +44,31 @@ public class Bai3 {
 			System.out.println(p);
 	}
 	
+	public static void xoa()
+	{
+		System.out.print("Nhập vào tên sản phẩm cần xóa: ");
+		String delName = sc.nextLine();
+		Product p = new Product(delName, 0.0);
+		for (Product pro : productList)
+		{
+			if (pro.name == p.name)
+				if (productList.remove(pro)) {
+				    System.out.println("Đã xóa thành công");
+				} else {
+				    System.out.println("Không tìm thấy tên nhập vào");
+				}
+		}
+	}
+	
+	public static void averagePrice()
+	{
+		double s = 0;
+		for (Product p : productList)
+			s += p.price;
+		System.out.println("Giá trung bình: "+s/productList.size());
+		
+	}
+	
 	public static void menu ()
 	{
 		int choice;
@@ -65,12 +90,12 @@ public class Bai3 {
                 sapXepTheoGia();
                 xuat();
                 break;
-//            case 3:
-//                ngaunhien();
-//                break;
-//            case 4:
-//            	sapXep();
-//            	break;
+            case 3:
+                xoa();
+                break;
+            case 4:
+            	averagePrice();
+            	break;
             case 5:
                 System.out.println("Chương trình kết thúc.");
                 break;

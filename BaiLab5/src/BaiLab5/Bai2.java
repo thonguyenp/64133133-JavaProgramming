@@ -54,6 +54,21 @@ public class Bai2 {
 		}
 	}
 	
+	private static void sapXep()
+	{
+		ArrayList<String> sorted = new ArrayList<String>(nameList);
+		Collections.sort(sorted);
+		System.out.println("Danh sách tăng dần theo bảng chữ cái: ");
+		for (String name : sorted)
+			System.out.println(name);
+		Collections.reverse(sorted);
+		System.out.println("Danh sách giảm dần theo bảng chữ cái: ");
+		for (String name : sorted)
+			System.out.println(name);
+
+
+	}
+	
 	public static void menu ()
 	{
 		int choice;
@@ -79,6 +94,10 @@ public class Bai2 {
             case 3:
                 ngaunhien();
                 break;
+            case 4:
+            	sapXep();
+            	break;
+
             case 5:
             	xoa();
             	break;

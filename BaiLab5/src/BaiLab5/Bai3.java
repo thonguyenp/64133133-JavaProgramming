@@ -48,15 +48,20 @@ public class Bai3 {
 	{
 		System.out.print("Nhập vào tên sản phẩm cần xóa: ");
 		String delName = sc.nextLine();
-		Product p = new Product(delName, 0.0);
-		for (Product pro : productList)
+//		Product p = new Product(delName, 0.0);
+		
+		for (int i = 0; i < productList.size(); i++)
 		{
-			if (pro.name == p.name)
-				if (productList.remove(pro)) {
-				    System.out.println("Đã xóa thành công");
-				} else {
-				    System.out.println("Không tìm thấy tên nhập vào");
-				}
+			Product pro = productList.get(i);
+			if (pro.name.equals(delName))
+			{
+				productList.remove(i);	//remove() giờ đây xóa 1 obj
+		        System.out.println("Đã xóa thành công");
+		        break;
+			}
+			else
+		        System.out.println("Không tìm thấy !");
+
 		}
 	}
 	

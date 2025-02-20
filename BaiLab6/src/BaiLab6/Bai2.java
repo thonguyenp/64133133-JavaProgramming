@@ -11,7 +11,7 @@ public class Bai2 {
 		System.out.println("Nhập vào 5 sản phẩm: ");
 		for (int i = 0; i < 5; i++)
 		{
-			System.out.printf("Nhập vào thông tin sp thứ %d: ",i);
+			System.out.printf("Nhập vào thông tin sp thứ %d: \n",i);
 			SanPham sp = new SanPham(null, i, null);
 			sp.nhap(sc);
 			dsSanPham.add(sp);

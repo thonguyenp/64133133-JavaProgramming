@@ -1,6 +1,8 @@
 package BaiLab7;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -36,6 +38,15 @@ public class Bai4 {
             		break;
             	case 2:
             		xuat();
+            		break;
+            	case 3:
+            		XuatSVGioi();
+            		break;
+            	case 4:
+            		SapXepTheoDiem();
+            		break;
+            	case 5:
+            		System.out.println("Kết thúc!");
             		break;
             }
 		}
@@ -89,5 +100,30 @@ public class Bai4 {
 			System.out.println("Học lực: " + sv.getHocLuc());
 		}
 	}
+	
+	public static void XuatSVGioi()
+	{
+		System.out.println("Sinh viên có học lực giỏi: ");
+		for (SinhVienPoly sv : dsSinhVien)
+		{
+			if (sv.getHocLuc().equalsIgnoreCase("Giỏi"))
+				sv.xuat();
+		}
+	}
+	
+	public static void SapXepTheoDiem()
+	{
+		System.out.println("Sắp xếp sinh viên theo điểm");
+		Collections.sort(dsSinhVien, new Comparator<SinhVienPoly>() {
+			@Override
+			public int compare(SinhVienPoly o1, SinhVienPoly o2) {
+				// TODO Auto-generated method stub
+				return Double.compare(o2.getDiem(), o1.getDiem());	//sắp giảm dần
+			}
+		});
+		xuat();
+	}
+	
+	
 
 }

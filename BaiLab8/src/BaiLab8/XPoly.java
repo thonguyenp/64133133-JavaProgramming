@@ -1,5 +1,7 @@
 package BaiLab8;
 
+import java.util.Scanner;
+
 public class XPoly {
 	public static double sum (double... x)
 	{
@@ -49,15 +51,37 @@ public class XPoly {
 		return String.join(" ", words);
 	}
 	
-	public static void main(String[] args) {
-		double resSum = sum(10,20,40);
-		double resMin = min(10,20,40);
-		double resMax = max(10,20,40);
-		String ten = toUpperFirstChar("nguyen tho");
+	public static void XuLySo ()
+	{
+		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Tổng: " + resSum);
-		System.out.println("Nhỏ nhất: " + resMin);
-		System.out.println("Lớn nhất: " + resMax);
-		System.out.println("Tên: "+ ten);
+		System.out.print("Nhập vào số lượng phần tử");
+		int n = sc.nextInt();
+		double [] numbers = new double[n];
+		
+		for (int i = 0; i < numbers.length; i++)
+		{
+			System.out.println("Nhập vào số thứ " + i + ": ");
+			numbers[i] = sc.nextInt();
+		}
+		System.out.println("Kết quả tính toán");
+		System.out.println("Tổng: " + sum(numbers));
+		System.out.println("Nhỏ nhất: " + min(numbers));
+		System.out.println("Lớn nhất: " + max(numbers));
+		
+	}
+	
+	public static void ChuyenDoiUpper()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào tên: ");
+		String name = sc.nextLine();
+		
+		System.out.println("Tên sau khi upper: "+toUpperFirstChar(name));
+	}
+	
+	public static void main(String[] args) {
+		XuLySo();
+		ChuyenDoiUpper();
 	}
 }
